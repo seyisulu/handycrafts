@@ -10,8 +10,8 @@ from registration.forms import ProducerForm, ArtisanForm, UserForm
 
 # Create your views here.
 
-# def test(request):
-#    return render_to_response('home/home_page.html')
+def index(request):
+    return render_to_response('registration/home.html')
 
 
 class ProducerCreate(CreateView):
@@ -54,17 +54,6 @@ class UserUpdate(UpdateView):
     form_class = UserForm
     exclude = ['created_on', 'updated_on']
     template_name = 'registration/forms/producer_form.html'
-
-
-def create_producer(request):
-    if request.method == 'POST':
-        form = ProducerForm(request.POST)
-
-        if form.is_valid():
-            return HttpResponseRedirect('/register')
-
-        else:
-            form = ProducerForm()
 
 
 class ArtisanView(DetailView):

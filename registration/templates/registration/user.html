@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}user{% endblock %}
+
+{% block content%}
+<h1>User Info</h1>
+<p><label>Name: </label>{{userDetail.name}}</p>
+<p><label>Phone: </label>{{userDetail.phone}}</p>
+<p><label>Address :</label>{{userDetail.address}}</p>
+<p><label>Email: </label>{{userDetail.emailAddress}}</p>
+<p><label>State: </label>{{userDetail.state}}</p>
+<p><label>lga: </label>{{userDetail.lga}}</p>
+<p><label>Date Created: </label>{{userDetail.created_on}}</p>
+<p><label>Date Updated:</label>{{userDetail.updated_on}}</p>
+{% endblock %}

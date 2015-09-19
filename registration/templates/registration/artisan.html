@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}artisan{% endblock %}
+
+{% block content%}
+<h1>Artisan Info</h1>
+<p><label>Name: </label>{{artisanDetail.name}}</p>
+<p><label>Phone: </label>{{artisanDetail.phone}}</p>
+<p><label>Address :</label>{{artisanDetail.address}}</p>
+<p><label>Email: </label>{{artisanDetail.emailAddress}}</p>
+<p><label>State: </label>{{artisanDetail.state}}</p>
+<p><label>lga: </label>{{artisanDetail.lga}}</p>
+<p><label>skill: </label>{{artisanDetail.skill}}</p>
+<p><label>Date Created: </label>{{artisanDetail.created_on}}</p>
+<p><label>Date Updated:</label>{{artisanDetail.updated_on}}</p>
+{% endblock %}

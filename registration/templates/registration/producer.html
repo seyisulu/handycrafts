@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}producer{% endblock %}
+
+{% block content%}
+<h1>Producer Info</h1>
+<p><label>Name: </label>{{producerDetail.name}}</p>
+<p><label>Phone: </label>{{producerDetail.phone}}</p>
+<p><label>Address :</label>{{producerDetail.address}}</p>
+<p><label>Email: </label>{{producerDetail.emailAddress}}</p>
+<p><label>State: </label>{{producerDetail.state}}</p>
+<p><label>lga: </label>{{producerDetail.lga}}</p>
+<p>
+	<label>products: </label>
+	<ol>
+	{%for p in product%}
+		<li> {{ p.name }} - {{p.quantity}}</li>
+	{% endfor %}
+	</ol>
+</p>
+<p><label>Date Created: </label>{{producerDetail.created_on}}</p>
+<p><label>Date Updated:</label>{{producerDetail.updated_on}}</p>
+{% endblock %}
