@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+TWILIO_ACCOUNT_SID = "ACd591840ff2d7aa1130f11a038a7dd91d"
+TWILIO_AUTH_TOKEN = "81e5d567cb610bc9b50160ec46ba5dbd"
+
 
 # Application definition
 
@@ -38,6 +41,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'registration',
+    'django_twilio',
+    'widget_tweaks',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -56,7 +61,7 @@ ROOT_URLCONF = 'HandyCrafts.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'registration/templates/')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -65,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.static',
             ],
         },
     },

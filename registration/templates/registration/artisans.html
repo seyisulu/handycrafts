@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <!-- Pre-loader -->
+  <div class="preloader">
+     <div class="status">&nbsp;</div>
+  </div>
+    
+ <section class="home bg-dark-3" style="height:350px;">
+    <div class="navbar navbar-custom" role="navigation">
+      <div class="container">
+        <!-- Navbar-header -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <i class="ion-navicon"></i>
+          </button>
+          <!-- LOGO -->
+          <a class="navbar-brand logo" href="{% url 'account:index' %}">
+            <i class="fa fa-hand-paper-o"></i>
+              <span>Handycrafts</span>
+          </a>
+        </div>
+        <!-- end navbar-header -->
+
+        <!-- menu -->
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="{% url 'account:artisan_add' %}">Register</a>
+            </li>
+            <li>
+              <a href="login.html">Login</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" data-toggle="dropdown">
+                More
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu arrow">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">Faq</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!--/Menu -->
+      </div>
+      <!-- end container -->
+     </div>
+     
+     <div class="container">
+     
+         <div class="row">
+             <br>
+            <h1 style="text-align:center; font-size:63px">Artisans at their best.</h1>
+         </div>
+         
+     </div>
+     
+     
+    <!-- End navbar -->
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+            <div class="card">
+                <div class="card-image">
+                    <img class="img-responsive" src="{% url 'images/hh.png' %}">
+                    <span class="card-title" style="font-weight: 600;" >Carpenter</span>
+                </div>
+                
+                <div class="card-content">
+                    <h4>Egbon Sikiru</h4> 
+                    <p><i class="fa fa-map-marker"></i>  Ibadan North, Oyo State. </p>
+                </div>
+                
+                <div class="card-action">
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+                <div class="col-md-4">
+            <div class="card">
+                <div class="card-image">
+                    <img class="img-responsive" src="{% url 'images/rr.png' %}">
+                    <span class="card-title" style="font-weight: 600;"> Bricklayer</span>
+                </div>
+
+                <div class="card-content">
+                    <h4>Mr. Nnamdi</h4>
+                    <p><i class="fa fa-map-marker"></i>  Obio-Akpor, Rivers State. </p>
+                </div>
+
+                <div class="card-action">
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+                <div class="col-md-4">
+            <div class="card">
+                <div class="card-image">
+                    <img class="img-responsive" src="{% url 'images/gg.png' %}">
+                    <span class="card-title" style="font-weight: 600;">Painter</span>
+                </div>
+
+                <div class="card-content">
+                    <h4>Akpororosevwe</h4>
+                    <p><i class="fa fa-map-marker"></i>  Ughelli North, Delta State. </p>
+                </div>
+
+                <div class="card-action">
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+    {% endblock %}

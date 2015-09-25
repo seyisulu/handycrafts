@@ -1,5 +1,6 @@
 from django.forms import ModelForm
-from registration.models import Artisan, Producer, User
+from django import forms
+from registration.models import Artisan, User
 
 
 class ArtisanForm(ModelForm):
@@ -9,16 +10,12 @@ class ArtisanForm(ModelForm):
         fields = ['name', 'phone', 'name', 'phone', 'address', 'emailAddress', 'state', 'lga', 'skill']
 
 
-class ProducerForm(ModelForm):
-    class Meta:
-        model = Producer
-        exclude = ['created_on', 'updated_on']
-        fields = ['name', 'phone', 'name', 'phone', 'address', 'emailAddress', 'state', 'lga', 'product']
-
-
 class UserForm(ModelForm):
     class Meta:
         model = User
         exclude = ['created_on', 'updated_on']
         fields = ['name', 'phone', 'name', 'phone', 'address', 'emailAddress', 'state', 'lga']
 
+
+class SearchForm(forms.Form):
+    find = forms.CharField(max_length=50)

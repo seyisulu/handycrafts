@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+{% block content %}
+     <!-- Pre-loader -->
+  <div class="preloader">
+     <div class="status">&nbsp;</div>
+  </div>
+
+ <section class="home bg-dark-2" style="height:700px;">
+    <div class="navbar navbar-custom" role="navigation">
+      <div class="container">
+        <!-- Navbar-header -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <i class="ion-navicon"></i>
+          </button>
+          <!-- LOGO -->
+          <a class="navbar-brand logo" href="{% url 'account:index' %}">
+            <i class="fa fa-hand-paper-o"></i>
+              <span>Handycrafts</span>
+          </a>
+        </div>
+        <!-- end navbar-header -->
+
+        <!-- menu -->
+        <!-- menu -->
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="{% url 'account:artisan_register' %}">Register</a>
+            </li>
+            <li>
+              <a href="#">Login</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" data-toggle="dropdown">
+                More
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu arrow">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Faq</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!--/Menu -->
+      </div>
+      <!-- end container -->
+    </div>
+
+     <div class="container">
+      <div class="row">
+        <div class="col-sm-6 text-left">
+          <div class="home-wrapper">
+            <h1 class="animated fadeInDown wow home-title" data-wow-delay=".1s">You Are Creative</h1>
+            <h4 class="animated fadeInDown wow" data-wow-delay=".2s">As an artisan, you are awesome, there are very few people who can do your job as good as you will do it. Oh, we won't be needing your email address.
+<br>Already on the cool side? Then you should sign in </h4>
+<a href="#" class="btn btn-lg btn-custom btn-round animated">Sign In</a>
+
+          </div>
+        </div>
+        <div class="col-sm-4 col-sm-offset-2">
+          <div class="home-wrapper">
+              <form role="form" action="" id="register_form" method="post" class="intro-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    {% render_field form.name class+="form-control" placeholder="Full name" required="required" %}
+                </div>
+                <div class="form-group">
+                    {% render_field form.phone class+="form-control" placeholder="Phone Number" required="required" %}
+                </div>
+                  <div class="form-group">
+                    {% render_field form.skill class+="form-control" placeholder="Vocation" required="required" %}
+                </div>
+                <div class="form-group">
+                    {% render_field form.state class+="form-control" required="required" %}
+                </div>
+                  <div class="form-group">
+                    {% render_field form.lga class+="form-control" required="required" %}
+                </div>
+                <div class="form-group text-center">
+                  <input type="submit" class="btn btn-custom" />
+                </div>
+              </form>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- End navbar -->
+    </section>
+
+
+    <section class="section bg-dark footer-cta">
+        <div class="container">
+        <div class="row text-center">
+            <div class="col-sm-10 col-sm-offset-1">
+            <h4 class="text-uppercase animated fadeInDown wow" data-wow-delay=".1s">We are Here to Help You</h4>
+          <h1 class="animated fadeInDown wow" data-wow-delay=".3s">This opens doors to a new publicity platform for your business. </h1>
+          <a href="" class="btn btn-custom btn-md animated fadeInDown wow" data-wow-delay=".5s">Learn More</a>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  {% endblock %}

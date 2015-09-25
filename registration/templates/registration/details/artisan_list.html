@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+
+{% block subtitle %}artisan{% endblock %}
+{% block content%}
+      <!-- Pre-loader -->
+  <div class="preloader">
+     <div class="status">&nbsp;</div>
+  </div>
+
+ <section class="home bg-dark-3" style="height:350px;">
+    <div class="navbar navbar-custom" role="navigation">
+      <div class="container">
+        <!-- Navbar-header -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <i class="ion-navicon"></i>
+          </button>
+          <!-- LOGO -->
+          <a class="navbar-brand logo" href="{% url 'account:index' %}">
+            <i class="fa fa-hand-paper-o"></i>
+              <span>Handycrafts</span>
+          </a>
+        </div>
+        <!-- end navbar-header -->
+
+        <!-- menu -->
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="{% url 'account:artisan_register' %}">Register</a>
+            </li>
+            <li>
+              <a href="#">Login</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" data-toggle="dropdown">
+                More
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu arrow">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Faq</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!--/Menu -->
+      </div>
+      <!-- end container -->
+     </div>
+
+     <div class="container">
+
+         <div class="row">
+             <br>
+            <h1 style="text-align:center; font-size:63px">Artisans at their best.</h1>
+         </div>
+
+     </div>
+
+
+    <!-- End navbar -->
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                {% for artisan in artisan_list %}
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-image">
+                                <img class="img-responsive" src="/static/images/hh.png" >
+                                <span class="card-title" style="font-weight: 600;" >{{ artisan.skill }}</span>
+                            </div>
+
+                            <div class="card-content">
+                                <h4>{{ artisan.name }}</h4>
+                                <p><i class="fa fa-map-marker"></i> {{ artisan.lga }}, {{ artisan.state }}. </p>
+                            </div>
+
+                            <div class="card-action">
+                                <a href="#">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </section>
+
+{% endblock %}
