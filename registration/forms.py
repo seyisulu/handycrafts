@@ -7,14 +7,14 @@ class ArtisanForm(ModelForm):
     class Meta:
         model = Artisan
         exclude = ['created_on', 'updated_on']
-        fields = ['name', 'phone', 'name', 'phone', 'address', 'emailAddress', 'state', 'lga', 'skill']
+        fields = ['name', 'phone', 'address', 'emailAddress', 'state', 'lga', 'skill']
 
 
 class UserForm(ModelForm):
     class Meta:
         model = User
         exclude = ['created_on', 'updated_on']
-        fields = ['name', 'phone', 'name', 'phone', 'address', 'emailAddress', 'state', 'lga']
+        fields = ['name', 'phone', 'address', 'emailAddress', 'state', 'lga']
 
 
 class SearchForm(forms.Form):

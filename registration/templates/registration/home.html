@@ -27,16 +27,19 @@
         <!-- menu -->
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li>
-              <a href="{% url 'account:artisan_register' %}">Register</a>
-            </li>
-            <li>
-                <!--TODO-->
-              <a href="#">Login</a>
+              <li class="dropdown">
+              <a href="#" data-toggle="dropdown">
+                Register
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu arrow">
+                <li><a href="{% url 'account:artisan_register' %}">Artisan</a></li>
+                <li><a href="{% url 'account:user_register' %}">User</a></li>
+              </ul>
             </li>
             <li class="dropdown">
               <a href="#" data-toggle="dropdown">
-                Pages
+                More
                 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu arrow">

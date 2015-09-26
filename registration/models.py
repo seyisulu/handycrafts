@@ -35,7 +35,7 @@ class Artisan(models.Model):
         return self.name + ' skill=' + self.skill
 
     def get_absolute_url(self):
-        return '/register/artisan/details/%i' % self.id
+        return '/account/artisan/%i' % self.id
         # return reverse('register.views.ArtisanView.as_view()', kwargs={'pk': self.pk})
 
 
@@ -53,5 +53,5 @@ class User(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return '/register/user/details/%i' % self.id
+        return '/account/user/%i' % self.id
         # return reverse('register.views.ArtisanView.as_view()', kwargs={'pk': self.pk})

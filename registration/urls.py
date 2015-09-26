@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^ring/$', views.ring),
 ]
 
-# TODO: perfect the registration page for user and artisan
+
+# TODO: perfect Artisan and user Details page
+# TODO: perfect login page
 # TODO: adjust the artisan and user update page
-# TODO: include Artisan Details page

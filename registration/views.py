@@ -19,19 +19,9 @@ class ArtisanCreate(CreateView):
     exclude = ['created_on', 'updated_on']
     template_name = 'registration/forms/artisan_register.html'
 
-    def form_valid(self, form):
+    def post(self, request, *args, **kwargs):
         print("submitted form")
-        name = form.cleaned_data['name']
-        phone = form.cleaned_data['phone']
-        skill = form.cleaned_data['skill']
-        state = form.cleaned_data['state']
-        lga = form.cleaned_data['lga']
-
-        state = State.objects.get(name=state)
-        lga = LocalGovernment.objects.get(name=lga)
-
-        newartisan = Artisan(name=name, phone=phone, skill=skill, state=state, lga=lga)
-        newartisan.save()
+        form = ArtisanForm(request.POST)
         return super(ArtisanCreate, self).form_valid(form)
 
 
@@ -41,6 +31,11 @@ class UserCreate(CreateView):
     exclude = ['created_on', 'updated_on']
     template_name = 'registration/forms/user_register.html'
 
+    def post(self, request, *args, **kwargs):
+        print("submitted form")
+        form = UserForm(request.POST)
+        return super(UserCreate, self).form_valid(form)
+
 
 class ArtisanUpdate(UpdateView):
     model = Artisan
@@ -48,12 +43,22 @@ class ArtisanUpdate(UpdateView):
     exclude = ['created_on', 'updated_on']
     template_name = 'registration/forms/artisan_form.html'
 
+    def post(self, request, *args, **kwargs):
+        print("submitted form")
+        form = ArtisanForm(request.POST)
+        return super(ArtisanUpdate, self).form_valid(form)
+
 
 class UserUpdate(UpdateView):
     model = User
     form_class = UserForm
     exclude = ['created_on', 'updated_on']
     template_name = 'registration/forms/user_form.html'
+
+    def post(self, request, *args, **kwargs):
+        print("submitted form")
+        form = UserForm(request.POST)
+        return super(UserUpdate, self).form_valid(form)
 
 
 class ArtisanView(DetailView):
@@ -65,7 +70,7 @@ class ArtisanView(DetailView):
 class UserView(DetailView):
     model = User
     template_name = 'registration/details/user_detail.html'
-
+    context_object_name = 'userDetail'
 
 class ArtisanList(ListView):
     """
