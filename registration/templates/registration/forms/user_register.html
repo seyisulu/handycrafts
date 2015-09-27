@@ -68,7 +68,7 @@
         </div>
         <div class="col-sm-4 col-sm-offset-2">
           <div class="home-wrapper">
-              <form role="form" id="register_form" method="post" class="intro-form">
+              <form role="form" action="" id="register_form" method="post" class="intro-form">
                 {% csrf_token %}
                 <div class="form-group">
                     {% render_field form.name class+="form-control" placeholder="Full name" required="required" %}

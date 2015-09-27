@@ -20,7 +20,6 @@ class ArtisanCreate(CreateView):
     template_name = 'registration/forms/artisan_register.html'
 
     def post(self, request, *args, **kwargs):
-        print("submitted form")
         form = ArtisanForm(request.POST)
         return super(ArtisanCreate, self).form_valid(form)
 
@@ -32,7 +31,6 @@ class UserCreate(CreateView):
     template_name = 'registration/forms/user_register.html'
 
     def post(self, request, *args, **kwargs):
-        print("submitted form")
         form = UserForm(request.POST)
         return super(UserCreate, self).form_valid(form)
 
